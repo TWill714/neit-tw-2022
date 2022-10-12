@@ -3,6 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>Week 2 Lab</title>
+        <!--Example of In-document Stylesheet-->
+        <style>
+            /*Thisis a CSS comment*/
+            /*We are going to write some CSS here*/
+            p{
+                color: purple;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            h2,h3,h5{
+                color: brown;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                background-color: grey;
+                text-align: center;
+                border: 2px solid darkred;
+                border-radius: 5px;
+            }
+            body{
+                background-color: palevioletred;
+                background-image: url("images/background.png");
+            }
+            a:link{
+                color: darkblue;
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            a:visited{
+                color: darkblue;
+            }
+            a:active{
+                color: yellow;
+            }
+        </style>
     </head>
     <body>
         <!--This is a header 1 element-->
@@ -21,14 +56,14 @@
         <!--Example of Unordered List-->
         <h2>Class's Favorite Fast Food</h2>
         <ul>
-            <li>McDonald's</li>
+            <li><b>McDonald's</b></li>
             <li>Chik-fil-a</li>
             <li>Dunkin</li>
             <li>Five Guys</li>
             <li>Subway</li>
             <li>Wendy's</li>
             <li>Popeyes</li>
-            <li>Taco Bell</li>
+            <li><i>Taco Bell</i></li>
             <li>KFC</li>
             <li>Sonic</li>
             <li>Friendly's</li>
@@ -37,19 +72,19 @@
         <h2>Class Favorite Video Games</h2>
         <ol>
             <li>Legend of Zelda: Breath of the Wild</li>
-            <li>Hollow Knight</li>
+            <li><strong>Hollow Knight</strong></li>
             <li>Rocket League</li>
             <li>Valorant</li>
-            <li>Fortnite</li>
+            <li style="color:cyan;">Fortnite</li>
             <li>Call of Duty</li>
             <li>Super Mario Oddesey</li>
             <li>God of War</li>
             <li>League of Legends</li>
             <li>GTA V</li>
             <li>Super Smash Bros.</li>
-            <li>Minecraft</li>
+            <li><em>Minecraft</em></li>
         </ol>
-        <p style="color:#0000ff;font-family: Verdana, Geneva, Tahoma, sans-serif;">Bacon ipsum dolor amet ball tip brisket buffalo swine. Swine strip steak shank pancetta, prosciutto shoulder meatball. Short loin short ribs rump, boudin shank bacon buffalo salami chicken andouille tenderloin sirloin landjaeger burgdoggen. Bresaola jowl kevin picanha. Capicola bresaola venison ground round. Pork loin rump pork drumstick chislic biltong pancetta frankfurter shankle ribeye landjaeger ball tip doner kevin venison. Bresaola buffalo shoulder shankle pig beef doner short loin rump jerky filet mignon fatback venison.</p>
+        <p style="color:#0000ff;font-family: Verdana, Geneva, Tahoma, sans-serif;"><strong>Bacon ipsum dolor</strong> <em>amet ball tip brisket buffalo swine.</em> Swine strip steak shank pancetta, prosciutto shoulder meatball.<i>Short loin short ribs rump</i> , boudin shank bacon buffalo salami chicken andouille tenderloin sirloin landjaeger burgdoggen. Bresaola jowl kevin picanha. Capicola bresaola venison ground round. Pork loin rump pork drumstick chislic biltong pancetta <b>frankfurter</b> shankle ribeye landjaeger ball tip doner kevin venison. Bresaola buffalo shoulder shankle pig beef doner short loin rump jerky filet mignon fatback venison.</p>
         <br>   
         <!--Example of Image Element-->
         <img src="Images/spacecat.jpeg" alt="Picture of Space Cat" width="300">
