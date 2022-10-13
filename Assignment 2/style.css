@@ -1,0 +1,33 @@
+p{
+    color: darkblue;
+    font-family:"Fantasy";
+    font-size: 20px;
+}
+h1{
+    color: darkblue;
+    font-family:"Spooky" ;
+    font-size: 30px;
+}
+h2{
+    color: darkblue;
+    font-family:"Spooky" ;
+    font-size: 25px;
+}
+a:link{
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:visited{
+    color: darkblue;
+}
+a:active{
+    color:darkmagenta;
+}
+ol{
+    color: darkblue;
+    font-family:"Fantasy";
+    font-size: 20px;
+}
