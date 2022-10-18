@@ -1,0 +1,38 @@
+p{
+    color:whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    width: 700px;
+    border: 5px dashed skyblue;
+    padding: 10px;
+    margin: auto;
+    background-color: slategrey;
+}
+body{
+    background-color: antiquewhite;
+    background-image: url(images/pink.jpeg);
+ 
+}
+
+
+h1{
+    background-color: purple;
+    border: 10px dotted darkblue;
+    color: skyblue;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+a:link{
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:visited{
+    color: darkblue;
+}
+a:active{
+    color: yellow;
+}
