@@ -18,3 +18,7 @@ a:visited{
 a:active{
     color: yellow;
 }
+img{
+    margin: auto;
+    width: 500px;
+}
