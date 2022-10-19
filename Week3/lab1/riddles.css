@@ -1,0 +1,20 @@
+p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+body{
+    background-color: lightcoral;
+}
+a:link{
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:visited{
+    color: darkblue;
+}
+a:active{
+    color: yellow;
+}
