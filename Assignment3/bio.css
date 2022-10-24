@@ -1,0 +1,44 @@
+body{
+    background-color: palevioletred;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    color: darkmagenta;
+}
+.container{
+    width: 970px;
+    padding: 10px;
+    text-align: center;
+}
+h1{
+    width: 950px;
+    padding: 10px;
+    text-align: center;
+    background-color: lightblue;
+    border: 3px solid darkblue;
+}
+.sections{
+    width: 950px;
+    padding: 10px;
+    background-color: lightcoral;
+    text-align: left;
+}
+img{
+    border: 7px solid darkmagenta;
+    width: 500px;
+}
+a:link{
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:visited{
+    color: darkblue;
+}
+a:active{
+    color: royalblue;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
