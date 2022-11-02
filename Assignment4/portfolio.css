@@ -1,19 +1,25 @@
 .container{
-    text-align: center;
+margin: auto;
     padding: 3%;
     border: solid 3px black;
 }
+.header{
+ 
+}
 h1{
-    text-align: left;
+width: fit-content;
     background-color: lightskyblue;
     border: 3px solid black;
-    width: fit-content;
+    
 }
 h2{
-    text-align: right;
+  
+    margin: auto;
+    margin-left: 80%;
+ width: fit-content;
     background-color: lightskyblue;
     border: 3px solid black;
-    width: fit-content;
+  
 }
 body{
     background-color: lightseagreen;
@@ -35,7 +41,13 @@ body{
     background-color: blue;
     text-decoration: none;
 }
-.nav-bar{
-    border: 3px solid black;
-    width:auto
+.nav{
+border: 3px solid black;
+height: 60px;
+width: fit-content;
+}
+.content{
+    height: 300px;
+    border: solid 3px black;
+    margin-top: 30px;
 }
