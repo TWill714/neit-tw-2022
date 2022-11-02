@@ -1,5 +1,5 @@
 .container{
-margin: auto;
+
     padding: 3%;
     border: solid 3px black;
 }
@@ -10,10 +10,10 @@ h1{
 width: fit-content;
     background-color: lightskyblue;
     border: 3px solid black;
-    
+    color: darkmagenta;
 }
 h2{
-  
+  color: darkmagenta;
     margin: auto;
     margin-left: 80%;
  width: fit-content;
@@ -47,6 +47,7 @@ height: 60px;
 width: fit-content;
 }
 .content{
+    margin: auto;
     height: fit-content
     border: solid 3px black;
     margin-top: 30px;
@@ -57,9 +58,10 @@ img{
    margin-bottom: 20px;
 }
 p{
-    text-align:justify
-float: right;
+    text-align:justify;
+    color: darkmagenta;
 }
 h3{
-    text-align: center;
+    color: darkblue;
+    text-align: left;
 }
