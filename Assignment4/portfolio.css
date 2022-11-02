@@ -1,8 +1,10 @@
 .container{
-    
+    justify-content: center;
+    margin: auto;
     padding: 3%;
     width: 800px;
     border: solid 3px black;
+    height: 1000px;
 }
 h1{
 width: fit-content;
@@ -13,7 +15,7 @@ width: fit-content;
 h2{
   color: darkmagenta;
     margin: auto;
-    margin-left: 80%;
+    margin-left: 60%;
  width: fit-content;
     background-color: lightskyblue;
     border: 3px solid black;
@@ -44,8 +46,9 @@ height: 60px;
 width: fit-content;
 }
 .content{
+    justify-content: center;
     margin: auto;
-    height: fit-content
+    height: 700px;
     border: solid 3px black;
     margin-top: 30px;
 }
@@ -63,7 +66,11 @@ h3{
     text-align: left;
 }
 .info{
-    width: 250px;
+    width: 400px;
+    margin-right: 25px;
     float: right;
-
+    height: fit-content;
+}
+.footer{
+    margin-top: 250px;
 }
