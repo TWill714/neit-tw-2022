@@ -1,24 +1,21 @@
 .container{
-    justify-content: center;
     margin: auto;
     padding: 3%;
     width: 800px;
     border: solid 3px black;
-    height: 1000px;
+}
+.info{
+    height: 100px;
+    width: 300px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+    float: right;
 }
 h1{
 width: fit-content;
     background-color: lightskyblue;
     border: 3px solid black;
     color: darkmagenta;
-}
-h2{
-  color: darkmagenta;
-    margin: auto;
-    margin-left: 60%;
- width: fit-content;
-    background-color: lightskyblue;
-    border: 3px solid black;
 }
 body{
     background-color: lightseagreen;
@@ -46,8 +43,6 @@ height: 60px;
 width: fit-content;
 }
 .content{
-    justify-content: center;
-    margin: auto;
     height: 700px;
     border: solid 3px black;
     margin-top: 30px;
@@ -59,19 +54,13 @@ img{
    margin-bottom: 20px;
 }
 p{
-    text-align:justify;
     color: darkmagenta;
 }
 h3{
     color: darkblue;
-    text-align: left;
+    text-align: center;
 }
-.info{
-    width: 200px;
-    margin-right: 25px;
-    float: right;
-    height: fit-content;
-}
+
 .footer{
-    margin-top: 250px;
+    margin-top: 10px;
 }
