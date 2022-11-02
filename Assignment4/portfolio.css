@@ -58,9 +58,10 @@ img{
    margin-bottom: 20px;
 }
 p{
- 
+float: right;
 }
 h3{
+    
     text-align: center;
 }
   
