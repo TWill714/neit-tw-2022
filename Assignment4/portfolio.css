@@ -54,4 +54,6 @@ width: fit-content;
 img{
     width: 300px;
     padding: 20px 20px 20px ;
+    float: left;
+    display: flex;
 }
