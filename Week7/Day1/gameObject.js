@@ -5,7 +5,7 @@ ctx.fillStyle = "green";
 
 var timer = requestAnimationFrame;
 var speed = 4;
-var gravity = 4;
+var gravity = 0.1;
 
 var bp = new Image();
 bp.src = "images/BP2.jpeg"
