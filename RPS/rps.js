@@ -35,7 +35,7 @@ btn[2].addEventListener(`click`, function(e){
 function play(pChoice)
 {
     var cChoice = Math.floor(Math.random()*2.999999)
-    
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.font = "20px  Arial";
     ctx.fillStyle = "purple";
     ctx.fillText("You chose "  + rps[pChoice] + " and the computer chose " + rps[cChoice], 300, 200);
