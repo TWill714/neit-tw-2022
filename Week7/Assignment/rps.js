@@ -2,7 +2,7 @@
 var canvas = document.getElementById("c");
 var ctx = canvas.getContext("2d");
 
-//create instances for images RPS
+
 var fire = new  Image();
 var water = new  Image();
 var grass = new  Image();
@@ -22,8 +22,8 @@ var result = "Select a button from above to choose."
 // ctx.font = "40px Arial";
 // ctx.fillStyle = "purple";
 // ctx.strokeStyle = "yellow";
-// ctx.fillText("Welcome to RPS Game!", 200, 280);
-// ctx.strokeText("Welcome to RPS Game!", 200, 280);
+// ctx.fillText("Welcome to FWG Game!", 200, 280);
+// ctx.strokeText("Welcome to FWG Game!", 200, 280);
 
 hgrass.onload = function(){
     draw(fire,water,grass,fire,water,grass);
