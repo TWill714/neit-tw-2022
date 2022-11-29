@@ -10,12 +10,12 @@ var hfire = new  Image();
 var hwater = new  Image();
 var hgrass = new  Image();
 
-fire.src = "Week7/Assignment/images/fire.png";
-water.src = "Week7/Assignment/images/water.jpg";
-grass.src = "Week7/Assignment/images/grass.png";
-hfire.src = "Week7/Assignment/images/hfire.png";
-hwater.src = "Week7/Assignment/images/hwater.png";
-hgrass.src = "Week7/Assignment/images/hgrass.png";
+fire.src = "/Week7/Assignment/images/fire.png";
+water.src = "/Week7/Assignment/images/water.jpg";
+grass.src = "/Week7/Assignment/images/grass.png";
+hfire.src = "/Week7/Assignment/images/hfire.png";
+hwater.src = "/Week7/Assignment/images/hwater.png";
+hgrass.src = "/Week7/Assignment/images/hgrass.png";
 
 var result = "Select a button from above to choose."
 
