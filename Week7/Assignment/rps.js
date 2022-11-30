@@ -57,6 +57,7 @@ function keyPressUp(e){
         ctx.fillText("Your Wins: " + wins,95, 40)
         ctx.fillText("CPU Wins: " + cpuWins,95, 70)
         drawHealthBar();
+        winCheck()
         healthCheck();
     }else if(e.keyCode == 82){
         location.reload();
