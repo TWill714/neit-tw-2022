@@ -9,9 +9,12 @@ var grass = new  Image();
 var hfire = new  Image();
 var hwater = new  Image();
 var hgrass = new  Image();
+var trophy = new Image();
 
 var wins = 0;
 var cpuWins= 0;
+var health = 3;
+var healthBarWidth = 200;
 
 fire.src = "images/fire.png";
 water.src = "images/water.png";
@@ -19,6 +22,7 @@ grass.src = "images/grass.png";
 hfire.src = "images/hfire.png";
 hwater.src = "images/hwater.png";
 hgrass.src = "images/hgrass.png";
+trophy.src = "images/trophy.png"
 
 var result = "Select a button from above to choose."
 
@@ -31,8 +35,8 @@ var result = "Select a button from above to choose."
 hgrass.onload = function(){
 ctx.fillStyle = "purple";
 ctx.font = "30px Arial";
-ctx.fillText("Welcome to the Fire, Water, and Grass game!", 175, 150);
-ctx.fillText("Press space to play!", 350, 250);
+ctx.fillText("Welcome to the Fire, Water, and Grass game!", 175, canvas.height/2 -50);
+ctx.fillText("Press space to play!", 350, canvas.height/2 +50);
 
 }
 
@@ -52,8 +56,11 @@ function keyPressUp(e){
         draw(fire,water,grass,fire,water,grass);
         ctx.fillText("Your Wins: " + wins,95, 40)
         ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+        drawHealthBar();
+        healthCheck();
+    }else if(e.keyCode == 82){
+        location.reload();
     }
-}
 
 function draw(fire,water,grass,cfire,cwater,cgrass){
     if(gameOver == true)
@@ -61,7 +68,7 @@ function draw(fire,water,grass,cfire,cwater,cgrass){
     ctx.font = "30px Arial";
     ctx.textAlign = "center";
     ctx.fillStyle = "black";
-    ctx.fillText("Welcome press space to Play", canvas.width/2,100);
+    ctx.fillText("Welcome press space to Play", canvas.width/2,canvas.height/2);
     return;
 }
 function draw(fire,water,grass,cfire,cwater,cgrass){
@@ -123,7 +130,9 @@ function playGame(playerChoice) {
                 draw(hfire, water,grass, hfire, water, grass);
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
-                
+                drawHealthBar();
+                winCheck()
+                healthCheck();
             }
             else if (cpuChoice == 1) {
                 //alert("CPU chose Water. CPU wins!")
@@ -132,6 +141,10 @@ function playGame(playerChoice) {
                 cpuWins++;
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                health--;
+                drawHealthBar();
+                winCheck()
+                healthCheck();
             }
             else  {
                // alert("CPU chose Grass. You win!")
@@ -140,7 +153,10 @@ function playGame(playerChoice) {
                 wins++;
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                drawHealthBar();
+                winCheck()
                 
+                healthCheck();
             }
             break;
 
@@ -153,14 +169,20 @@ function playGame(playerChoice) {
                 wins++
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                drawHealthBar();
+                winCheck()
+                healthCheck();
             }
             else if (cpuChoice == 1) {
                 //alert("CPU chose Water. It's a tie!")
                 result = "CPU chose Water. It's a tie!"
-                draw(fire, hwater ,hgrass, fire, hwater, grass);
+                draw(fire, hwater ,grass, fire, hwater, grass);
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                drawHealthBar();
+                winCheck()
                 
+                healthCheck();
             }
             else  {
                 //alert("CPU chose Grass. CPU wins!")
@@ -169,6 +191,10 @@ function playGame(playerChoice) {
                 cpuWins++;
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                health--;
+                drawHealthBar();
+                winCheck()
+                healthCheck();
             }
             break;
 
@@ -181,7 +207,10 @@ function playGame(playerChoice) {
                 cpuWins++;
                 ctx.fillText("Your Wins: " + wins,95, 40)
                 ctx.fillText("CPU Wins: " + cpuWins,95, 70)
-                
+                health--;
+                drawHealthBar();
+                winCheck()
+                healthCheck();
             }
             else if (cpuChoice == 1) {
                // alert("CPU chose Water. You win!")
@@ -190,7 +219,9 @@ function playGame(playerChoice) {
                wins++;
                ctx.fillText("Your Wins: " + wins,95, 40)
                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
-              
+               drawHealthBar();
+               winCheck()
+               healthCheck();
             }
             else  {
                // alert("CPU chose Grass. It's a tie!")
@@ -198,9 +229,47 @@ function playGame(playerChoice) {
                draw(fire, water,hgrass, fire, water, hgrass);
                ctx.fillText("Your Wins: " + wins,95, 40)
                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+               drawHealthBar();
+               winCheck()
+               healthCheck();
             }
             break;
     }
 
 
 }
+function healthCheck(){
+    if(health == 0){
+        gameOver = true;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        drawHealthBar();
+        ctx.fillText("Your Wins: " + wins,95, 40)
+        ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+        ctx.font = "50px Arial"
+        ctx.fillText("Game Over!",canvas.width/2, canvas.height/2);
+        ctx.fillText("Press R to Restart",canvas.width/2, canvas.height/2 +50 );
+    }
+}
+function winCheck(){
+    if(wins == 3){
+        gameOver = true;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.font = "50px Arial"
+        ctx.fillText("You Win!!!",canvas.width/2, canvas.height/2);
+        ctx.fillText("Press R to Play Again",canvas.width/2, canvas.height/2 +50 );
+        ctx.drawImage(trophy ,canvas.width/2 -50, canvas.height/2 -  200 );
+    }
+}
+function drawHealthBar(){
+    
+    var currentBarWidth = healthBarWidth * (health);
+    ctx.fillStyle = "lavender";
+    ctx.fillRect(250,30,600,10);
+    ctx.fillStyle = "Purple";
+    ctx.font = "25px Arial";
+    ctx.fillText("Health",525,25);
+    if(health>=0){
+    ctx.fillStyle ="purple";
+    ctx.fillRect(250,30,currentBarWidth,10);
+    }
+}}
