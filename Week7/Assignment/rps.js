@@ -10,12 +10,15 @@ var hfire = new  Image();
 var hwater = new  Image();
 var hgrass = new  Image();
 
-fire.src = "/Week7/Assignment/images/fire.png";
-water.src = "/Week7/Assignment/images/water.jpg";
-grass.src = "/Week7/Assignment/images/grass.png";
-hfire.src = "/Week7/Assignment/images/hfire.png";
-hwater.src = "/Week7/Assignment/images/hwater.png";
-hgrass.src = "/Week7/Assignment/images/hgrass.png";
+var wins = 0;
+var cpuWins= 0;
+
+fire.src = "images/fire.png";
+water.src = "images/water.png";
+grass.src = "images/grass.png";
+hfire.src = "images/hfire.png";
+hwater.src = "images/hwater.png";
+hgrass.src = "images/hgrass.png";
 
 var result = "Select a button from above to choose."
 
@@ -26,7 +29,11 @@ var result = "Select a button from above to choose."
 // ctx.strokeText("Welcome to FWG Game!", 200, 280);
 
 hgrass.onload = function(){
-    draw(fire,water,grass,fire,water,grass);
+ctx.fillStyle = "purple";
+ctx.font = "30px Arial";
+ctx.fillText("Welcome to the Fire, Water, and Grass game!", 175, 150);
+ctx.fillText("Press space to play!", 350, 250);
+
 }
 
 document.addEventListener("keydown",keyPressDown);
@@ -42,6 +49,9 @@ function keyPressUp(e){
     if(e.keyCode == 32){
         gameOver = false;
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        draw(fire,water,grass,fire,water,grass);
+        ctx.fillText("Your Wins: " + wins,95, 40)
+        ctx.fillText("CPU Wins: " + cpuWins,95, 70)
     }
 }
 
@@ -59,7 +69,7 @@ function draw(fire,water,grass,cfire,cwater,cgrass){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.font = "30px Arial";
     ctx.textAlign = "center";
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "purple";
     ctx.fillText("Player Choices", canvas.width/2,100);
     ctx.drawImage(fire,canvas.width/2 - fire.width/2 - 100, 150);
     ctx.drawImage(water,canvas.width/2 - water.width/2, 150);
@@ -81,7 +91,7 @@ function draw(fire,water,grass,cfire,cwater,cgrass){
 var rps = [];
 rps[0] = "Fire"
 rps[1] = "Water"
-rps[2] = "GRass"
+rps[2] = "Grass"
 
 
 document.getElementById("fire").addEventListener('click', function (e) {
@@ -93,7 +103,7 @@ document.getElementById("water").addEventListener('click', function (e) {
     playGame(rps[1]);
 });
 document.getElementById("grass").addEventListener('click', function (e) {
-    //lert("You Clicked " + rps[2]);
+    //alert("You Clicked " + rps[2]);
     playGame(rps[2]);
 });
 
@@ -111,16 +121,26 @@ function playGame(playerChoice) {
                // alert("CPU chose Fire. It's a tie!")
                 result = "CPU chose Fire. It's a tie!"
                 draw(hfire, water,grass, hfire, water, grass);
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                
             }
             else if (cpuChoice == 1) {
                 //alert("CPU chose Water. CPU wins!")
                 result = "CPU chose Water. CPU wins!"
                 draw(hfire, water,grass, fire, hwater, grass);
+                cpuWins++;
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
             }
             else  {
                // alert("CPU chose Grass. You win!")
                 result = "CPU chose Grass. You win!"
                 draw(hfire, water,grass, fire, water, hgrass);
+                wins++;
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                
             }
             break;
 
@@ -130,16 +150,25 @@ function playGame(playerChoice) {
                 //alert("CPU chose Fire. You win!")
                 result = "CPU chose Fire. You win!"
                 draw(fire, hwater,grass, hfire, water, grass);
+                wins++
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
             }
             else if (cpuChoice == 1) {
                 //alert("CPU chose Water. It's a tie!")
                 result = "CPU chose Water. It's a tie!"
                 draw(fire, hwater ,hgrass, fire, hwater, grass);
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                
             }
             else  {
                 //alert("CPU chose Grass. CPU wins!")
                 result = "CPU chose Grass. CPU wins!"
                 draw(fire, hwater,grass, fire, water, hgrass);
+                cpuWins++;
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
             }
             break;
 
@@ -149,16 +178,26 @@ function playGame(playerChoice) {
                 //alert("CPU chose Fire. CPU wins!")
                 result = "CPU chose Fire. CPU wins!"
                 draw(fire, water,hgrass, hfire, water, grass);
+                cpuWins++;
+                ctx.fillText("Your Wins: " + wins,95, 40)
+                ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+                
             }
             else if (cpuChoice == 1) {
                // alert("CPU chose Water. You win!")
                result = "CPU chose Water. You win!"
                draw(fire, water ,hgrass, fire, hwater, grass);
+               wins++;
+               ctx.fillText("Your Wins: " + wins,95, 40)
+               ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+              
             }
             else  {
                // alert("CPU chose Grass. It's a tie!")
                result = "CPU chose Grass. It's a tie!"
                draw(fire, water,hgrass, fire, water, hgrass);
+               ctx.fillText("Your Wins: " + wins,95, 40)
+               ctx.fillText("CPU Wins: " + cpuWins,95, 70)
             }
             break;
     }

@@ -9,23 +9,31 @@
         html, body{
             display: flex;
             justify-content: center;
-            background-color: blueviolet;
+            background-color: lightpink;
         }
         canvas{
-            border: 5px solid lightblue;
+            border: 5px solid darkmagenta;
         }
-    
+  h1{
+    float: left
+  }
+  button{
+    height: 25px;
+    justify-content: center;
+    width: 100px
+  }
+
     </style>
 </head>
 <body>
     <div id="container">
-        <h1 style="color: darkred;">Fire,</h1>
-        <h1 style="color: darkblue;">Water, </h1>
-        <h1 style="color: darkgreen;">Grass</h1>
+        <h1 style="color: darkred;">Fire     ,     </h1>
+        <h1 style="color: darkblue;">Water    ,    </h1>
+        <h1 style="color: darkgreen;"> Grass           </h1>
         <nav>
-            <button style="background-color: lightcoral;" id="fire">Fire</button>
-            <button style="background-color: lightblue;"id="water">Water</button>
-            <button style="background-color: lightgreen;"id="grass">Grass</button>
+            <button style="background-color: lightcoral ;color: red;" id="fire">Fire</button>
+            <button style="background-color: lightblue; color: blue;"id="water">Water</button>
+            <button style="background-color: lightgreen; color: green;"id="grass">Grass</button>
         </nav>
         <canvas id="c" width="1000" height="600"></canvas>
     </div>
