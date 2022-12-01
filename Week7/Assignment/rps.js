@@ -255,12 +255,13 @@ function winCheck(){
     if(wins == 3){
         gameOver = true;
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillText("Your Wins: " + wins,95, 40)
+        ctx.fillText("CPU Wins: " + cpuWins,95, 70)
         ctx.font = "50px Arial"
         ctx.fillText("You Win!!!",canvas.width/2, canvas.height/2);
         ctx.fillText("Press R to Play Again",canvas.width/2, canvas.height/2 +50 );
         ctx.drawImage(trophy ,canvas.width/2 -50, canvas.height/2 -  200 );
-        ctx.fillText("Your Wins: " + wins,95, 40)
-        ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+   
         drawHealthBar();
     }
 }
