@@ -244,6 +244,7 @@ function healthCheck(){
         gameOver = true;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         drawHealthBar();
+        ctx.font = "30px Arial";
         ctx.fillText("Your Wins: " + wins,95, 40)
         ctx.fillText("CPU Wins: " + cpuWins,95, 70)
         ctx.font = "50px Arial"
@@ -255,6 +256,7 @@ function winCheck(){
     if(wins == 3){
         gameOver = true;
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.font = "30px Arial";
         ctx.fillText("Your Wins: " + wins,95, 40)
         ctx.fillText("CPU Wins: " + cpuWins,95, 70)
         ctx.font = "50px Arial"
