@@ -259,6 +259,9 @@ function winCheck(){
         ctx.fillText("You Win!!!",canvas.width/2, canvas.height/2);
         ctx.fillText("Press R to Play Again",canvas.width/2, canvas.height/2 +50 );
         ctx.drawImage(trophy ,canvas.width/2 -50, canvas.height/2 -  200 );
+        ctx.fillText("Your Wins: " + wins,95, 40)
+        ctx.fillText("CPU Wins: " + cpuWins,95, 70)
+        drawHealthBar();
     }
 }
 function drawHealthBar(){
