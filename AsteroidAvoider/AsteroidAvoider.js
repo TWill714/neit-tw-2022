@@ -155,12 +155,13 @@ function pressKeyUp(e) {
 
     if (gameOver) {
         if (e.keyCode == 32) {
-            if () {
+            if (currentState == 2) {
                 //from the game over screen
+                ctx.clearRect(0,0,canvas.width,canvas.height);
                 currentState = 0;
                 numAsteroids = 20;
                 asteroids = [];
-                score = 0
+                score = 0;
                 gameStart();
                 main();
             } else {
@@ -287,9 +288,12 @@ gameState[1] = function () {
 
         if (detectCollision(distance, (ship.height / 2 + asteroids[i].radius))) {
             //alert("hit ateroid game over");
+            ctx.clearRect(0,0,canvas.width,canvas.height);
             gameOver = true;
             currentState = 2;
             main();
+            //clears asteroids
+            return;
         }
 
         if (asteroids[i].y > canvas.height + asteroids[i].radius) {
@@ -313,15 +317,33 @@ gameState[1] = function () {
 
 //Game Over Menu
 gameState[2] = function () {
-    ctx.save();
-    ctx.font = "30px Arial";
-    ctx.fillStyle = "white";
-    ctx.textAligh = "center";
-    ctx.fillText("Game Over! Your Score was: " + score.toString(), canvas.width / 2 - 175, canvas.height / 2 - 60);
-    ctx.font = "15px Arial";
-    ctx.fillText("Press Space to Play Again", canvas.width / 2 - 75, canvas.height / 2 + 20);
-    ctx.restore();
+    if (score > highScore) {
+        //New High Score
+        highScore = score;
+        ctx.save();
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "white";
+        ctx.textAligh = "center";
+        ctx.fillText("Game Over! Your Score was: " + score.toString(), canvas.width / 2 - 175, canvas.height / 2 - 60);
+        ctx.fillText("Your new High Score is: " + highScore.toString(), canvas.width / 2 - 140, canvas.height / 2 - 30);
+        ctx.fillText("New Record!", canvas.width / 2 - 75, canvas.height / 2);
+        ctx.font = "15px Arial";
+        ctx.fillText("Press Space to Play Again", canvas.width / 2 - 75, canvas.height / 2 + 20);
+        ctx.restore();
+    } else {
+        //regular high score
+        ctx.save();
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "white";
+        ctx.textAligh = "center";
+        ctx.fillText("Game Over! Your Score was: " + score.toString(), canvas.width / 2 - 175, canvas.height / 2 - 60);
+        ctx.fillText("Your High Score is: " + highScore.toString(), canvas.width / 2 - 140, canvas.height / 2 - 30);
+        ctx.font = "15px Arial";
+        ctx.fillText("Press Space to Play Again", canvas.width / 2 - 75, canvas.height / 2 + 20);
+        ctx.restore();
+    }
 }
+
 
 //Main Game Loop 
 function main() {
