@@ -8,10 +8,10 @@ var finish = 956;
 
 //Car Variables
 var carPos= 2;
-var startFuel = randomNumber(canvas.width,425);
+var startFuel = randomNumber(950,700);
 var fuel = startFuel;
-var fuelBarWidth = 300;
-var speed = 3;
+var fuelBarWidth = 512;
+var speed = 5;
 var gameOver = true;
 var carWidth = 70;
 
@@ -24,6 +24,11 @@ var frames = fps;
 var carSprite = new Image();
 carSprite.src = "images/mycar.png"
 carSprite.onload = function(){
+
+}
+var gauge = new Image();
+gauge.src = "images/metal.jpg"
+gauge.onload = function(){
 
 }
 
@@ -47,7 +52,7 @@ function main(){
         //Menu Screen
         ctx.save();
         ctx.fillStyle = "purple";
-        ctx.font = "50px Arial"
+        ctx.font = "50px Digital7"
         ctx.textAlign = "center";
         ctx.fillText("Press Space to Start", canvas.width/2, canvas.height/2);
         ctx.restore();
@@ -98,10 +103,9 @@ ctx.drawImage(carSprite,carPos,canvas.height/2,carWidth,20);
 
 function drawFuelBar(){
     var currentBarWidth = fuelBarWidth * (fuel/startFuel);
-    ctx.fillStyle = "lavender";
-    ctx.fillRect(start,30,fuelBarWidth,10);
-    ctx.fillStyle = "black";
-    ctx.font = "25px Arial";
+    ctx.drawImage(gauge,start,30,fuelBarWidth,10);
+    ctx.fillStyle = "purple";
+    ctx.font = "30px Digital7";
     ctx.fillText("Fuel",start,25);
     if(fuel>0){
     ctx.fillStyle ="purple";
@@ -113,7 +117,7 @@ function drawResults(){
     if(carPos + carWidth >finish){
     ctx.save();
     ctx.fillStyle = "green";
-    ctx.font = "25px Arial";
+    ctx.font = "25px Digital7";
     ctx.textAlign = "center";
     ctx.fillText("You made it to the finish... You Win!", canvas.width/2,canvas.height/2);
     ctx.restore();
@@ -121,7 +125,7 @@ function drawResults(){
     else{
     ctx.save();
     ctx.fillStyle = "red";
-    ctx.font = "25px Arial";
+    ctx.font = "25px Digital7";
     ctx.textAlign = "center";
     ctx.fillText("You ran out of fuel... You lose! :(", canvas.width/2,canvas.height/2);
     ctx.restore();
@@ -149,7 +153,7 @@ function drawStartTimer(){
     if(seconds >= 1){
         ctx.save();
         ctx.fillStyle = "blue";
-        ctx.font = "30px Arial";
+        ctx.font = "30px Digital7";
         ctx.textAlign = "center";
         ctx.fillText(seconds,canvas.width/2, canvas.height/2);
         ctx.restore();
@@ -157,10 +161,13 @@ function drawStartTimer(){
     else{
         ctx.save();
         ctx.fillStyle = "blue";
-        ctx.font = "30px Arial";
+        ctx.font = "30px Digital7";
         ctx.textAlign = "center";
         ctx.fillText("GO!",canvas.width/2, canvas.height/2);
         ctx.restore();
     }
    
+}
+if(carPos > canvas.width){
+    speed=0;
 }
