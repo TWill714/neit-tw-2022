@@ -23,5 +23,6 @@ header{
     font-family :"Dimension";
     position: relative;
     text-align: center; 
+    font-kerning: 1px;
 
 }
