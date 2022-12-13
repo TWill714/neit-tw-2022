@@ -20,11 +20,11 @@ header{
     background-color: black;
     height: fit-content;
     width: 600px;
-     font-family:'Astera';
+    font-family:Astera;
     position: relative;
     text-align: center; 
 
 }
 h1{
-    font-family:'Astera';
+    font-family:Astera;
 }
