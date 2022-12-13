@@ -14,6 +14,11 @@ obstacle.src = "images/obstacle.png";
 obstacle.onload = function () {
 
 }
+
+var startScreen = new Image();
+startScreen.src = "images/startscreen.png";
+startScreen.onload = function(){}
+
 //score variables
 var score = 0;
 var highScore = 0;
@@ -261,14 +266,15 @@ function scoreTimer() {
 //Asteroid Game State Machine
 //Main Menu
 gameState[0] = function () {
-    ctx.save();
-    ctx.font = "30px Arial";
-    ctx.fillStyle = "white";
-    ctx.textAligh = "cemter";
-    ctx.fillText("Asteroid Avoider", canvas.width / 2 - 100, canvas.height / 2 - 30);
-    ctx.font = "15px Arial";
-    ctx.fillText("Press Space to Play", canvas.width / 2 - 75, canvas.height / 2 + 20);
-    ctx.restore();
+   ctx.save();
+    ctx.drawImage(startScreen,0,0);
+    //ctx.font = "30px Arial";
+    //ctx.fillStyle = "white";
+   // ctx.textAligh = "cemter";
+    //ctx.fillText("Asteroid Avoider", canvas.width / 2 - 100, canvas.height / 2 - 30);
+   // ctx.font = "15px Arial";
+    //ctx.fillText("Press Space to Play", canvas.width / 2 - 75, canvas.height / 2 + 20);
+ ctx.restore();
 }
 //Game Scene
 gameState[1] = function () {
