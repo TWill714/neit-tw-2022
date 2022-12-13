@@ -21,7 +21,9 @@ header{
     height: fit-content;
     width: 600px;
     position: relative;
-  
     text-align: center; 
 
+}
+h1{
+    font-family:'ASTERA';
 }
