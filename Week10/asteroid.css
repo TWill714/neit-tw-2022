@@ -23,6 +23,13 @@ header{
     font-family :"Dimension";
     position: relative;
     text-align: center; 
-    font-kerning: 3px;
-
+    font-kerning: 6px;
+}
+footer{
+    color: blueviolet;
+    background-color: black;
+    height: fit-content;
+    font-family :"Dimension";
+    position: relative;
+    text-align: center; 
 }
