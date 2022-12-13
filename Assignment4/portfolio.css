@@ -63,3 +63,8 @@ h3{
 .footer{
     margin-top: 10px;
 }
+.info{
+    position: absolute;
+    bottom: 450px;
+    margin-left: 400px;
+}
