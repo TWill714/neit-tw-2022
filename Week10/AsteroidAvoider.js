@@ -268,6 +268,13 @@ function scoreTimer() {
 gameState[0] = function () {
    ctx.save();
     ctx.drawImage(startScreen,0,0);
+    if (startScreen.complete) {
+        ctx.drawImage(startScreen, 0, 0);
+    } else {
+        startScreen.onload = function () {
+            ctx.drawImage(startScreen, 0, 0);    
+        };
+    }
     //ctx.font = "30px Arial";
     //ctx.fillStyle = "white";
    // ctx.textAligh = "cemter";
