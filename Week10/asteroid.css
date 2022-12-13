@@ -17,9 +17,12 @@ canvas{
 }
 #header{
     color: blueviolet;
-    background-color: blue;
+    background-color: black;
     height: fit-content;
+    width: 500px;
     position: relative;
     font-family:'Dimension';
+    text-align: center;
+   
 
 }
