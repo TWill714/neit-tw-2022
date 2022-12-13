@@ -15,14 +15,13 @@ canvas{
     display: flex;
     justify-content: center;
 }
-#header{
+header{
     color: blueviolet;
     background-color: black;
     height: fit-content;
     width: 600px;
     position: relative;
-    font-family:"Alien Androids";
-    text-align: center;
-   
+    font-family:"ASTERA";
+    text-align: center; 
 
 }
