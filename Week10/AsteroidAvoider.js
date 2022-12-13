@@ -23,10 +23,6 @@ var endScreen = new Image();
 endScreen.src = "images/endscreen.png";
 endScreen.onload = function(){}
 
-var orb = new Image();
-orb.src = "images/shield.png"
-orb.onload = function(){}
-
 //score variables
 var score = 0;
 var highScore = 0;
@@ -175,7 +171,6 @@ function pressKeyUp(e) {
                 currentState = 0;
                 numAsteroids = 1;
                 asteroids = [];
-                orbs = []
                 score = 0;
                 gameStart();
                 main();
@@ -194,8 +189,7 @@ function pressKeyUp(e) {
 //variables for asteroid creation
 var numAsteroids = 1;
 var asteroids = [];
-var numOrbs = 1;
-var orbs = [];
+
 
 //class for asteroid objects
 function Asteroid() {
@@ -213,21 +207,6 @@ function Asteroid() {
     }
 }
 
-function Orb() {
-    
-    this.x = randomRange(canvas.width + this.radius, this.radius) + canvas.width;
-    this.y = randomRange(canvas.height + this.radius, this.radius);
-    this.vx = randomRange(-8, -3);
-
-
-    this.drawOrb = function () {
-        //commands to draw Orb
-        ctx.save();
-        ctx.drawImage(orb, this.x, this.y);
-        ctx.restore();
-    }
-}
-
 
 
 
@@ -237,9 +216,6 @@ function gameStart() {
     //for loop to create the first asteroids
     for (var i = 0; i < numAsteroids; i++) {
         asteroids[i] = new Asteroid();
-    }
-    for (var i = 0; i <numOrbs; i++) {
-        orbs[i] = new Orb();
     }
     //create new instance of player ship
     ship = new PlayerShip();
@@ -364,9 +340,6 @@ gameState[1] = function () {
         //draw asteroids
         asteroids[i].x += asteroids[i].vx;
         asteroids[i].drawAsteroid();
-
-        orbs[i].x += orbs[i].vx;
-        orbs[i].drawOrb();
     }
 
     ship.moveShip();
