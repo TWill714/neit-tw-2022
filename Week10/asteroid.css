@@ -32,4 +32,6 @@ footer{
     font-family :"Dimension";
     position: relative;
     text-align: center; 
+    justify-content: right;
+    margin-top: auto;
 }
