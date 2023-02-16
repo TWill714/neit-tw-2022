@@ -38,8 +38,8 @@ var playerData ={
 				{width:128, height:128, startX:769, startY:0},
 				{width:128, height:128, startX:897, startY:0},
 				{width:128, height:128, startX:1025, startY:0},
-				{width:128, height:128, startX:1153, startY:0},
-				{width:128, height:128, startX:1281, startY:0}
+				{width:128, height:128, startX:1153, startY:0}
+				
 				
 			]
 		},
@@ -59,7 +59,7 @@ var playerData ={
 		//The jump animation 
 		jump:
 		{
-			fps:1,
+			fps:18,
 			cycle:false,
 			frames:
 			[
@@ -72,7 +72,7 @@ var playerData ={
 		//The crouch animation 
 		crouch:
 		{
-			fps:5,
+			fps:3,
 			cycle:false,
 			frames:
 			[
@@ -86,7 +86,7 @@ var playerData ={
 		//The attack animation 
 		attack:
 		{
-			fps:8,
+			fps:4,
 			cycle:false,
 			//width:300,
 			frames:
