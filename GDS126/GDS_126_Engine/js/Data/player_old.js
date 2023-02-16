@@ -19,68 +19,86 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/skull.png`
+		src:`images/Celeste.png`
 	},
 	states:{
 		//The idle animation 
     	idle:
 		{
-			fps:15,
+			fps:10,
 			cycle:true,
 			frames:
 			[
-				{width:32, height:32, startX:0, startY:0},
-				{width:32, height:32, startX:32, startY:0},
-				{width:32, height:32, startX:0, startY:32},
-				{width:32, height:32, startX:32, startY:32},
-				{width:32, height:32, startX:0, startY:64}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
+				
 			]
 		},
-		//The walk animation 
+		//The walwidth:128, height:128,
 		walk:
 		{
-			fps:15,
+			fps:4,
 			cycle:true,
 			frames:
 			[
-				{width:32, height:32, startX:0, startY:0},
-				{width:32, height:32, startX:32, startY:32}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 			]
 		},
 		//The jump animation 
 		jump:
 		{
-			fps:15,
+			fps:4,
 			cycle:false,
 			frames:
 			[
-				{width:32, height:32, startX:0, startY:0}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 			]
 		},
 		//The crouch animation 
 		crouch:
 		{
-			fps:15,
-			cycle:false,
+			fps:5,
+			cycle:true,
 			frames:
 			[
-				{width:32, height:32, startX:0, startY:96}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 			]
 		},
 		//The attack animation 
 		attack:
 		{
-			fps:15,
+			fps:8,
 			cycle:false,
-			width:300,
+			//width:300,
 			frames:
 			[
-				{width:32, height:32, startX:0, startY:96},
-				{width:32, height:32, startX:32, startY:96},
-				{width:32, height:32, startX:0, startY:128},
-				{width:32, height:32, startX:32, startY:128},
-				{width:32, height:32, startX:0, startY:160},
-				{width:32, height:32, startX:32, startY:160}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
+				
 			]
 		}
 	}
