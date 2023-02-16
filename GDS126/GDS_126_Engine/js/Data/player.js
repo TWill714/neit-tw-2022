@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/snale.png`
+		src:`images/Celeste.png`
 	},
 	states:{
 		//The idle animation 
