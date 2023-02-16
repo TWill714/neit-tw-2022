@@ -366,11 +366,11 @@ function GameObject(obj)
 	{
 		var size = 5;
 		context.save();
-		context.fillStyle = "black";
-		context.fillRect(this.left().x-size/2, this.left().y-size/2, size, size);
-		context.fillRect(this.right().x-size/2, this.right().y-size/2, size, size);
-		context.fillRect(this.top().x-size/2, this.top().y-size/2, size, size);
-		context.fillRect(this.bottom().x-size/2, this.bottom().y-size/2, size, size);
+		context.fillStyle = "red";
+		context.fillRect(this.left.x-size/2, this.left.y-size/2, size, size);
+		context.fillRect(this.right.x-size/2, this.right.y-size/2, size, size);
+		context.fillRect(this.top.x-size/2, this.top.y-size/2, size, size);
+		context.fillRect(this.bottom.x-size/2, this.bottom.y-size/2, size, size);
 		context.fillRect(this.x-size/2, this.y-size/2, size, size);
 		context.restore();
 	}
