@@ -49,12 +49,10 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:92, height:128, startX:0, startY:0},
-				{width:92, height:128, startX:0, startY:0},
-				{width:92, height:128, startX:0, startY:0},
-				{width:92, height:128, startX:0, startY:0}
-				
-				
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 			]
 		},
 		//The jump animation 
@@ -64,10 +62,10 @@ var playerData ={
 			cycle:false,
 			frames:
 			[
-				{width:92, height:128, startX:640, startY:0},
-				{width:92, height:128, startX:640, startY:0},
-				{width:92, height:128, startX:640, startY:0},
-				{width:92, height:128, startX:640, startY:0}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 			]
 		},
 		//The crouch animation 
@@ -77,11 +75,11 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:92, height:128, startX:768, startY:0},
-				{width:92, height:128, startX:768, startY:0},
-				{width:92, height:128, startX:768, startY:0},
-				{width:92, height:128, startX:768, startY:0},
-				{width:92, height:128, startX:896, startY:0}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 			]
 		},
 		//The attack animation 
@@ -92,13 +90,14 @@ var playerData ={
 			//width:300,
 			frames:
 			[
-				{width:91, height:128, startX:1024, startY:0},
-				{width:91, height:128, startX:1024, startY:0},
-				{width:91, height:128, startX:1024, startY:0},
-				{width:91, height:128, startX:1152, startY:0},
-				{width:91, height:128, startX:1152, startY:0},
-				{width:91, height:128, startX:1152, startY:0},
-				{width:91, height:128, startX:1152, startY:0}
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0},
+				{width:82, height:128, startX:0, startY:0}
 				
 			]
 		}
