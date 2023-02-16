@@ -315,6 +315,6 @@ gameStates[`level1`] = function()
 	
 	//Renders front of cave
 	front.play().render(`drawSprite`);
-	wiz.drawDebug()
+	
 
 }
