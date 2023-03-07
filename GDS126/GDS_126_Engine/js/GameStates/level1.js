@@ -86,11 +86,11 @@ var currentBullet = 0;
 
 for(let i=0; i<100; i++)
 {
-	bullets[i] = new GameObject({width:64, height:64})
-	//bullets[i].img.src="images/mrt.jpg"
+	bullets[i] = new GameObject({width:10, height:10})
+	//bullets[i].img.src="images/projectileSheet.png";
 	bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	bullets[i].changeState(`magic`)
 }
 
 //console.log(bullets)
@@ -165,8 +165,8 @@ gameStates[`level1`] = function()
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
-			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].x = wiz.x -level.x + (wiz.dir * 96) ;
+			bullets[currentBullet].y = wiz.y - 5 ;
 			bullets[currentBullet].dir = wiz.dir;
 			
 			//sounds.play(`splode`,1)
@@ -304,7 +304,7 @@ gameStates[`level1`] = function()
 		bullets[i].move()
 		bullets[i].play(function(){return}).drawSprite()
 		//bullets[i].angle+=10
-		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
+		//while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{
 			
 			bullets[i].vy=0;

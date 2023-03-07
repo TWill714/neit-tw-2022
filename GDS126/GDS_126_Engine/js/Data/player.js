@@ -91,7 +91,7 @@ var playerData ={
 			//width:300,
 			frames:
 			[
-				{width:128, height:128, startX:3073, startY:0},
+				//{width:128, height:128, startX:3073, startY:0},
 				{width:128, height:128, startX:3201, startY:0},
 				{width:128, height:128, startX:3329, startY:0},
 				{width:128, height:128, startX:3457, startY:0},
@@ -101,7 +101,22 @@ var playerData ={
 				{width:128, height:128, startX:3969, startY:0}
 				
 			]
+		},
+		magic:
+		{
+			fps:5,
+			cycle:true,
+			frames:
+			[
+				{width:10, height:10, startX:4352, startY:0},
+				{width:10, height:10, startX:4362, startY:0},
+				{width:10, height:10, startX:4372, startY:0},
+				{width:10, height:10, startX:4382, startY:0}
+			]
 		}
 	}
-		
 }
+		
+	
+
+
