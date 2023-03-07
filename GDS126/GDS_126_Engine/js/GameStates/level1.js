@@ -1,6 +1,6 @@
 
 /*------------Use this if you want to implement States---------------*/
-var gravity = 1;
+var gravity = .6;
 var friction = {x:.85,y:.97}
 
 var stage = new GameObject({width:canvas.width, height:canvas.height});
@@ -140,7 +140,8 @@ gameStates[`level1`] = function()
 	{
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
-		wiz.changeState(`jump`)
+		wiz.changeState(`jump`);
+		sounds.play('jump',1);
 		//sounds.play(`splode`,1)
 	}
 	shotTimer--;
@@ -159,6 +160,7 @@ gameStates[`level1`] = function()
 		{
 			wiz.changeState(`attack`)
 			shotTimer = shotDelay
+			sounds.play('attackSound',0.5)
 			//console.log(`Boom`)
 
 			bullets[currentBullet].vx = 5*wiz.dir;

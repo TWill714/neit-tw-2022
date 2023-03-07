@@ -17,6 +17,7 @@ function press(e)
 	if(e.keyCode == 87)
 	{
 		w = true;
+		
 	}
 	if(e.keyCode == 65)
 	{
