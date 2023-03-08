@@ -26,7 +26,7 @@ if(soundNodes.length>0) var sounds=new SoundManager(soundNodes)
 soundNodes=null
 
 
-document.addEventListener('click', ()=>  sounds.play('music',0));
+//document.addEventListener('click',()=>  sounds.play('music',0));
 
 
 
