@@ -3,7 +3,7 @@ This file contains all of the code for the Main Menu
 ----------------------------------*/
 
 var startButton = new GameObject();
-
+//startButton.img.src="images/mrt.jpg"
 startButton.width=205;
 startButton.height = 58;
 startButton.hitBoxWidth=205;
@@ -13,7 +13,7 @@ console.log(startButton.collisionPoints.right)
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/Start_No_Buttons.png"
+menuBackground.img.src = "images/TWUpdatedStart.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
@@ -38,16 +38,12 @@ gameStates[`menu`] =function(){
 		}
 
 		//Hover Effect Graffic
-		startButton.img.src="images/StartHover.png"
-		var startPattern = context.createPattern(startButton.img, `no-repeat`);
-		startButton.color = startPattern;
+		startButton.color = `transparent`
 	}
 	else
 	{
 		//Default Button Graphic
-		startButton.img.src="images/StartButton.png"
-		var startPattern = context.createPattern(startButton.img, `no-repeat`);
-		startButton.color = startPattern;
+		startButton.color = `transparent`
 	}
 	
 	//Makes the button clickable
