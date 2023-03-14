@@ -2,27 +2,15 @@
 This file contains all of the code for the Main Menu
 ----------------------------------*/
 
-var startButton = new GameObject();
-//startButton.img.src="images/mrt.jpg"
-startButton.width=205;
-startButton.height = 58;
-startButton.hitBoxWidth=205;
-startButton.x = 817;
-startButton.y = 225;
-console.log(startButton.collisionPoints.right)
-
+var startButton = new GameObject({width:205, height:58,x:817, y:320 , hitBoxWidth:210});
+//startButton.img.src="images/StartButton.png"
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/TWUpdatedStart.png"
+menuBackground.img.src = "images/Start_No_Buttons.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
-var exitButton = new GameObject();
-exitButton.width=205;
-exitButton.height = 58;
-exitButton.hitBoxWidth=205;
-exitButton.x = 817;
-exitButton.y = 408;
+
 
 gameStates[`menu`] =function(){
 
@@ -38,31 +26,19 @@ gameStates[`menu`] =function(){
 		}
 
 		//Hover Effect Graffic
-		startButton.color = `transparent`
+		startButton.img.src="images/StartHover.png"
+		var startClick = context.createPattern(startButton.img, `no-repeat`);
+		startButton.color = startClick;
 	}
 	else
 	{
 		//Default Button Graphic
-		startButton.color = `transparent`
+		startButton.img.src="images/StartButton.png"
+		var startDefault = context.createPattern(startButton.img, `no-repeat`);
+		startButton.color =  startDefault;
 	}
 	
-	//Makes the button clickable
-	if(exitButton.overlap(mouse))
-	{
-		if(mouse.pressed)
-		{
-			//Changes to the game state
-			gameStates.changeState('menu')
-		}
-
-		//Hover Effect Graffic
-		exitButton.color = `transparent`
-	}
-	else
-	{
-		//Default Button Graphic
-		exitButton.color = `transparent`
-	}
+	
 	
 
 	menuBackground.drawStaticImage();
