@@ -3,7 +3,7 @@ This file contains all of the code for the Main Menu
 ----------------------------------*/
 
 var startButton = new GameObject({width:205, height:58,x:817, y:320 , hitBoxWidth:210});
-//startButton.img.src="images/StartButton.png"
+startButton.img.src="images/StartButton.png"
 
 var menuBackground = new GameObject();
 menuBackground.img.src = "images/Start_No_Buttons.png"
@@ -42,7 +42,7 @@ gameStates[`menu`] =function(){
 	
 
 	menuBackground.drawStaticImage();
-	startButton.render();
+	startButton.drawStaticImage();
 	exitButton.render();
 }
 	
