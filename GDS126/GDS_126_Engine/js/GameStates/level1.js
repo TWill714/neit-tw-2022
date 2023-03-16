@@ -71,7 +71,7 @@ sky.img.src = `images/BG.png`
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-//rbg.img.src=`images/hills.png`
+rbg.img.src=`images/stars.png`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
@@ -166,8 +166,8 @@ gameStates[`level1`] = function()
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
-			bullets[currentBullet].x = wiz.x -level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y - 5 ;
+			bullets[currentBullet].x = wiz.x -level.x + (wiz.dir * 50) ;
+			bullets[currentBullet].y = wiz.y - 9 ;
 			bullets[currentBullet].dir = wiz.dir;
 			
 			//sounds.play(`splode`,1)
