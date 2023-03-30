@@ -23,7 +23,7 @@ function animate()
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
 	//Move the Player
-	ball.x += 0;
+	ball.x += 1;
 	
 	//Update the Screen
 	ball.draw();
