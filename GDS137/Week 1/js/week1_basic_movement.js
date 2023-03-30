@@ -17,13 +17,20 @@ var ball;
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
 
+	
+
 function animate()
 {
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);	
+	if(ball.x > canvas.width - ball.width/2)
+	{
+		ball.x = canvas.width - ball.width/2
+		ball.x = -2;	
+	}
 	
 	//Move the Player
-	ball.x += 1;
+	ball.x += 2;
 	
 	//Update the Screen
 	ball.draw();
