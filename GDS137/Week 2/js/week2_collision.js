@@ -16,6 +16,7 @@ var prevX;
 	
 	//Instantiate the Player
 	player = new GameObject();
+	ball = new GameObject();
 	player.x = 100;
 	
 	lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
