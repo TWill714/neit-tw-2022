@@ -28,11 +28,19 @@ function animate()
 	{
 		console.log("Moving Right");
 		player.y += 2;
+		if(player.y > 730)
+		{
+		player.y += -2;
+		}
 	}
 	if(s)
 	{
 		console.log("Moving Left");
 		player.y += -2;
+		if(player.y < 50)
+		{
+			player.y += 2;
+		}
 	}
 	
 	
