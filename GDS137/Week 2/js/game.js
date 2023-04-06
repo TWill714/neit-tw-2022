@@ -20,7 +20,9 @@ var ball;
 	player.height = 180;
 	player.width = 30;
 
-	ball.vx =-2;
+	ball.width = 50;
+	ball.height= ball.width;
+	ball.vx =-3;
 	ball.vy = 0;
 
 	//Set the Animation Timer
@@ -37,7 +39,7 @@ function animate()
 	{
 		console.log("Moving Right");
 		player.y += 2;
-		if(player.y > 670)
+		if(player.y > 710)
 		{
 		player.y += -2;
 		}
@@ -46,14 +48,14 @@ function animate()
 	{
 		console.log("Moving Left");
 		player.y += -2;
-		if(player.y < 50)
+		if(player.y < 90)
 		{
 			player.y += 2;
 		}
 	}
 	ball.x += ball.vx;
 	ball.y += ball.vy;
-if(ball.x < ball.width - ball.width/2)
+if(ball.x < ball.width/2)
 {
 	//this.color = "#370f70";
 	//ball.x = ball.width - ball.width/2
@@ -84,8 +86,18 @@ if(ball.y > canvas.height - ball.width/2)
 }
 	if(ball.hitTestObject(player))
 	{
+
 		ball.x = player.x + player.width/2 + ball.width/2;
-		ball.vx = 4;
+		ball.vx = 3;
+		if(ball.y < player.y - player.height/6)
+		{
+	
+			ball.vy = -3;
+		}
+		if(ball.y > player.y + player.height/6)
+		{
+			ball.vy = 3;
+		}
 	}
 	//Update the Screen
 	player.drawRect();
