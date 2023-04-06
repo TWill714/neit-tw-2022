@@ -55,10 +55,12 @@ function animate()
 	ball.y += ball.vy;
 if(ball.x < ball.width - ball.width/2)
 {
-	this.color = "#370f70";
-	ball.x = ball.width - ball.width/2
-	ball.vx = -ball.vx;
-	ball.color = this.color;
+	//this.color = "#370f70";
+	//ball.x = ball.width - ball.width/2
+	//ball.vx = -ball.vx;
+	//ball.color = this.color;
+	ball.x = canvas.width/2;
+	ball.y = canvas.height/2;
 }
 if(ball.x > canvas.width - ball.width/2)
 {
