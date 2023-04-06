@@ -61,7 +61,7 @@ function animate()
 	}
 	
 	//Shows Bounding Boxes
-	if(lBlock2.hitTestObject(player))
+	if(player.hitTestObject(ball))
 	{
 		//draw bounding boxes
 		context.strokeRect(lBlock2.x- lBlock2.width/2, lBlock2.y - lBlock2.height/2, lBlock2.width, lBlock2.height)
@@ -75,7 +75,7 @@ function animate()
 	}
 	
 	//Impede movement
-	if(rBlock2.hitTestObject(player))
+	if(player.hitTestObject(ball))
 	{
 		player.x = prevX;
 		console.log("colliding");
