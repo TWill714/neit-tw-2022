@@ -6,13 +6,14 @@ var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
 var ball;
+var player1 = new GameObject();
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 	
 	//Instantiate the Player
-	ball = new Ball();
+	ball = new GameObject();
 	ball.vx = 2
 	ball.vy = 2
 	
@@ -40,7 +41,7 @@ function animate()
 		this.color = "#370f70";
 		ball.x = canvas.width - ball.width/2
 		ball.vx = -ball.vx;
-		ball.color = this.color;
+		ball.color = this.color;ball.color = this.color;
 	}
 	if(ball.y < ball.height - ball.width/2)
 	{
@@ -58,5 +59,7 @@ function animate()
 	
 
 	//Update the Screen
-	ball.draw();
+	ball.drawCircle();
+	player1.drawRect();
+
 }
