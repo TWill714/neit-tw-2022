@@ -44,27 +44,6 @@ function animate()
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
-	
-	context.save();
-	context.strokeStyle = "lightblue";
-	context.beginPath();
-	context.moveTo(canvas.width/2,0);
-	context.lineTo(canvas.width/2,800);
-	context.closePath();
-	context.lineWidth = 5;
-	context.stroke();
-	context.restore();
-
-
-	context.font = "20px Arial";
-	context.fontcolor = "purple";
-	context.fillText("Player 1  |  Player 2", canvas.width/2 - 87 , 30);
-	context.fillText(p1Wins, canvas.width/2 - 24, 50);
-	context.fillText("-", canvas.width/2 -4 , 50);
-	context.fillText(p2Wins, canvas.width/2 + 13, 50);
-
-	context.drawImage(img, ball.x - 25, ball.y - 25, ball.width, ball.height);
-
 	//Move the Player to the right
 	if(w)
 	{
@@ -166,6 +145,25 @@ if(ball.y > canvas.height - ball.width/2)
 			ball.vy = 4;
 		}
 	}
+	context.save();
+	context.strokeStyle = "lightblue";
+	context.beginPath();
+	context.moveTo(canvas.width/2,0);
+	context.lineTo(canvas.width/2,800);
+	context.closePath();
+	context.lineWidth = 5;
+	context.stroke();
+	context.restore();
+
+
+	context.font = "20px Arial";
+	context.fontcolor = "purple";
+	context.fillText("Player 1  |  Player 2", canvas.width/2 - 87 , 30);
+	context.fillText(p1Wins, canvas.width/2 - 24, 50);
+	context.fillText("-", canvas.width/2 -4 , 50);
+	context.fillText(p2Wins, canvas.width/2 + 13, 50);
+
+	context.drawImage(img, ball.x - 25, ball.y - 25, ball.width, ball.height);
 	
 	//Update the Screen
 	player.drawRect();
