@@ -24,7 +24,7 @@ var p2Wins = 0;
 	player.height = 180;
 	player.width = 30;
 
-	player2.x = 990;
+	player2.x = 994;
 	player2.y = canvas.height/2;
 	player2.height = 180;
 	player2.width = 30;
@@ -43,12 +43,25 @@ function animate()
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
+	
+	context.save();
+	context.strokeStyle = "lightblue";
+	context.beginPath();
+	context.moveTo(canvas.width/2,0);
+	context.lineTo(canvas.width/2,800);
+	context.closePath();
+	context.lineWidth = 5;
+	context.stroke();
+	context.restore();
+
+
 	context.font = "20px Arial";
 	context.fontcolor = "purple";
-	context.fillText("Player 1  |  Player 2", canvas.width/2 - 100, 30);
-	context.fillText(p1Wins, canvas.width/2 - 45, 50);
-	context.fillText("-", canvas.width/2 - 20 , 50);
-	context.fillText(p2Wins, canvas.width/2 , 50);
+	context.fillText("Player 1  |  Player 2", canvas.width/2 - 87 , 30);
+	context.fillText(p1Wins, canvas.width/2 - 24, 50);
+	context.fillText("-", canvas.width/2 -4 , 50);
+	context.fillText(p2Wins, canvas.width/2 + 13, 50);
+
 	//Move the Player to the right
 	if(w)
 	{
