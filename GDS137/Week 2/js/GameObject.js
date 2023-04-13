@@ -43,7 +43,6 @@ function GameObject(x,y,w,h,color)
 		context.restore();
 		
 	}	
-	
 	this.drawCircle = function()
 	{
 		context.save();
