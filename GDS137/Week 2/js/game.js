@@ -8,6 +8,8 @@ var interval = 1000/60;
 var player;
 var player2;
 var ball;
+var p1Wins = 0;
+var p2Wins = 0;
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -41,7 +43,12 @@ function animate()
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
-	
+	context.font = "20px Arial";
+	context.fontcolor = "purple";
+	context.fillText("Player 1  |  Player 2", canvas.width/2 - 100, 30);
+	context.fillText(p1Wins, canvas.width/2 - 45, 50);
+	context.fillText("-", canvas.width/2 - 20 , 50);
+	context.fillText(p2Wins, canvas.width/2 , 50);
 	//Move the Player to the right
 	if(w)
 	{
@@ -83,11 +90,13 @@ function animate()
 	ball.y += ball.vy;
 if(ball.x < ball.width/2)
 {
+	p2Wins++
 	ball.x = canvas.width/2;
 	ball.y = canvas.height/2;
 }
 if(ball.x > canvas.width - ball.width/2)
 {
+	p1Wins++
 	ball.x = canvas.width/2;
 	ball.y = canvas.height/2;
 }
@@ -141,6 +150,7 @@ if(ball.y > canvas.height - ball.width/2)
 			ball.vy = 4;
 		}
 	}
+	
 	//Update the Screen
 	player.drawRect();
 	player2.drawRect();
