@@ -101,6 +101,7 @@ function animate()
 	}
 	
 	
+	
 	//---------Objective: Jump the gap to get the blue pearl----------------------------------------------------------------------------------------------------
 	//---------Call the players drawDebug() function to see where his current hitpoints are
 	//---------Change the objects in the hitTestPoint function so that the player has a hitpoint on his bottom left and bottom right.
@@ -112,14 +113,14 @@ function animate()
 				You simply need to change the values of the x and y properties of the object literals listed below to find the solution.
 	*/
 
-	while(platform0.hitTestPoint({x:player.x, y:player.y}) && player.vy >=0)
+	while(platform0.hitTestPoint({x:player.left().x, y:player.bottom().y}) && player.vy >=0)
 	{
 		player.y--;
 		player.vy = 0;
 		player.canJump = true;
 	}
 	
-	while(platform1.hitTestPoint({x:player.x, y:player.y}) && player.vy >=0)
+	while(platform1.hitTestPoint({x:player.right().x, y:player.bottom().y}) && player.vy >=0)
 	{
 		player.y--;
 		player.vy = 0;
