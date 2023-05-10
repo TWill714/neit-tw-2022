@@ -104,14 +104,21 @@ function angularMovement()
 
 	var dx = player.x - pearl.x;
 	var dy = player.y - pearl.y;
+	var angle = Math.atan2(dy, dx);
 	var dist = Math.sqrt(dx*dx+dy*dy);
 	
-	console.log(dy);
+	console.log(player.x);
+	console.log(pearl.x);
 
 	if(dist < 300)
 	{
-		pearl.vx = dx
-		pearl.vy = dy;
+	pearl.vx = Math.cos(angle);
+	pearl.vy = Math.sin(angle);
+	}
+
+	if(player.x - pearl.x < 1)
+	{
+		pearl.x = 10000;
 	}
 	
 	//move player
