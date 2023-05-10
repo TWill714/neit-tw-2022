@@ -116,7 +116,7 @@ function angularMovement()
 	pearl.vy = Math.sin(angle);
 	}
 
-	if(player.x - pearl.x < 1)
+	if(dist < 0.1)
 	{
 		pearl.x = 10000;
 	}
