@@ -69,7 +69,21 @@ function animate()
 	}
 	
 	
-	
+	var dx = player.x - turret.x;
+	var dy = player.y - turret.y;
+	var radians = Math.atan2(dy,dx);
+
+	turret.angle = radians * 180/Math.PI;
+
+if(turret.angle > player.x)
+{
+	turret.angle += Math.cos(radians);
+}
+if(turret.angle < player.y)
+{
+	turret.angle += Math.sin(radians);
+}
+
 	
 	
 	bullet.move();
@@ -80,6 +94,7 @@ function animate()
 
 function angularMovement()
 {
+	var tradians = turret.angle * Math.PI/180;
 	if(w)
 	{	
 		//Convert Angle to Radians
@@ -98,6 +113,7 @@ function angularMovement()
 	{
 		//Convert Angle to Radians
 		var radians = player.angle * Math.PI/180;
+	
 		
 		//Calculate acceleration modifiers (lengtha and height of triangle)
 		player.ax = Math.cos(radians);
@@ -117,7 +133,7 @@ function angularMovement()
 	{
 		player.angle+=2;
 	}
-	turret.angle = player.y
+	
 	
 	//apply physics to velocity
 	player.vx *= fX;
@@ -125,7 +141,9 @@ function angularMovement()
 	
 	//apply gravity to velocity
 	player.vy += gravity;
-	
+
+
+
 	//move player
 	player.move();
 }
