@@ -104,8 +104,6 @@ function animate()
 	player.y += Math.round(player.vy);
 	platform1.move();
 
-	
-	
 	while(platform0.hitTestPoint(player.bottom()) && player.color != platform0.color)
 	{
 		while(player.height==0)
