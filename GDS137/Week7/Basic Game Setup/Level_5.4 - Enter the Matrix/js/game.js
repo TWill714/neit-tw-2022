@@ -12,17 +12,20 @@ var Score = 0;
 
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
-	canvas.style.backgroundColor="black";
+	canvas.style.backgroundColor="#410063";
 	
 	
 	player = new GameObject({width:50, height: 50,x:canvas.width/2, y:750, color: "yellow"});
 
- 	player.vx = 20
+ 	player.vx = 0
 	var amount = 5;
 	var particles = [];
 	var particles2 = [];
 	var colors = ["white", "#88ff88"];
-	
+	function rand(low, high)
+	{
+		return Math.random() * (high - low)
+	}
 	
 	for(var i = 0; i < amount; i++)
 	{
@@ -31,9 +34,9 @@ var Score = 0;
 		var randomColor = Math.round(Math.random());
 		particles[i].color = "green"
 	
-		particles[i].x = Math.random() * canvas.width;
-		particles[i].y = Math.random() * canvas.height;
-		particles[i].vy = Math.random() * 10 + 5;
+		particles[i].x = rand(0,800)
+		particles[i].y = 0
+		particles[i].vy = rand(50,60)
 		
 	}
 	for(var i = 0; i < amount; i++)
@@ -43,9 +46,9 @@ var Score = 0;
 		var randomColor = Math.round(Math.random());
 		particles2[i].color = "red"
 	
-		particles2[i].x = Math.random() * canvas.width;
-		particles2[i].y = Math.random() * canvas.height;
-		particles2[i].vy = Math.random() * 10 + 5;
+		particles2[i].x = rand(0,800)
+		particles2[i].y = 0
+		particles2[i].vy = rand(20,30)
 		
 	}
 	
@@ -57,10 +60,7 @@ var Score = 0;
 	interval = 1000/60;
 	timer = setInterval(animate, interval);
 
-	function rand(low, high)
-	{
-		return Math.random() * (high - low)
-	}
+	
 function animate()
 {	
 	if(a)
@@ -90,7 +90,8 @@ function animate()
 		if(particles[p].y > canvas.height)
 		{
 			particles[p].y = 0
-			particles[p].vy = rand(5,15)
+			particles[p].x = rand(0,800)
+		//	particles[p].vy = rand(50,60)
 		}
 	if(particles[p].hitTestObject(player))
 	{
@@ -98,13 +99,13 @@ function animate()
 		{
 		particles[p].x = Math.random() * canvas.width;
 		particles[p].y = -100
-		particles[p].vy = Math.random() * 10 + 5;
+		//particles[p].vy = Math.random() * 10 + 5;
 		}
 
 	Score++
 	player.color = "green"
 	clearTimeout(colorSwap)
-	swap = setTimeout(colorSwap, 1000)
+	swap = setTimeout(colorSwap, 500)
 	
 	}
 	
@@ -127,7 +128,8 @@ function animate()
 		if(particles2[p].y > canvas.height)
 		{
 			particles2[p].y = 0
-			particles2[p].vy = rand(5,15)
+			//particles2[p].vy = rand(50,60)
+			console.log(particles2[p].vy)
 		}
 		if(particles2[p].hitTestObject(player))
 		{
@@ -135,18 +137,18 @@ function animate()
 			{
 			particles2[i].x = Math.random() * canvas.width;
 			particles2[i].y = -100
-			particles2[i].vy = Math.random() * 10 + 5;
+		//	particles2[i].vy = Math.random() * 10 + 5;
 			}
 			for(var i = 0; i < amount; i++)
 			{
 			particles[i].x = Math.random() * canvas.width;
 			particles[i].y = -100
-			particles[i].vy = Math.random() * 10 + 5;
+		//	particles[i].vy = Math.random() * 10 + 5;
 			}
 		Score = 0
 		player.color = "red"
 		clearTimeout(colorSwap)
-		swap = setTimeout(colorSwap, 1000)
+		swap = setTimeout(colorSwap, 5000)
 		
 		}
 
@@ -161,9 +163,9 @@ function animate()
 		//-------------------------------------------------------------------------------------------------------------------------
 		
 		particles2[p].drawCircle();
-		context.font = "30px Arial black";
+		context.font = "30px Arial black bold";
 		context.fillStyle = "#555555";
-		context.fillText("Score" + Score, 80, 25,)
+		context.fillText("Score: " + Score, 80, 50,)
 	
 	player.drawRect();
 
