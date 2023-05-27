@@ -63,6 +63,10 @@ var Score = 0;
 	
 function animate()
 {	
+	function rand(low, high)
+	{
+		return Math.random() * (high - low)
+	}
 	if(a)
 	{
 		player.vx += -player.ax * player.force;
