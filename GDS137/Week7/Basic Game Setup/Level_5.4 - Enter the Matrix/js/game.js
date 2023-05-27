@@ -132,6 +132,7 @@ function animate()
 		if(particles2[p].y > canvas.height)
 		{
 			particles2[p].y = 0
+			particles[p].x = rand(0,800)
 			//particles2[p].vy = rand(50,60)
 			console.log(particles2[p].vy)
 		}
