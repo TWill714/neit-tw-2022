@@ -148,7 +148,7 @@ function animate()
 		Score = 0
 		player.color = "red"
 		clearTimeout(colorSwap)
-		swap = setTimeout(colorSwap, 5000)
+		swap = setTimeout(colorSwap, 500)
 		
 		}
 
