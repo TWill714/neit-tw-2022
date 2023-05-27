@@ -24,7 +24,7 @@ var Score = 0;
 	var colors = ["white", "#88ff88"];
 	function rand(low, high)
 	{
-		return Math.random() * (high - low)
+		return Math.random() * (high - low) + low
 	}
 	
 	for(var i = 0; i < amount; i++)
@@ -36,7 +36,7 @@ var Score = 0;
 	
 		particles[i].x = rand(0,800)
 		particles[i].y = 0
-		particles[i].vy = rand(50,60)
+		particles[i].vy = rand(5,10)
 		
 	}
 	for(var i = 0; i < amount; i++)
@@ -48,7 +48,7 @@ var Score = 0;
 	
 		particles2[i].x = rand(0,800)
 		particles2[i].y = 0
-		particles2[i].vy = rand(20,30)
+		particles2[i].vy = rand(5,10)
 		
 	}
 	
@@ -132,9 +132,8 @@ function animate()
 		if(particles2[p].y > canvas.height)
 		{
 			particles2[p].y = 0
-			particles[p].x = rand(0,800)
+			particles2[p].x = rand(0,800)
 			//particles2[p].vy = rand(50,60)
-			console.log(particles2[p].vy)
 		}
 		if(particles2[p].hitTestObject(player))
 		{
