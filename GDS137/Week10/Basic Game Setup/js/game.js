@@ -46,11 +46,14 @@ function startGame()
 	var dx = dot.x - mouse.x;
 	var dy = dot.y - mouse.y;
 	var dist = Math.sqrt(dx*dx + dy * dy);
+	var dx2 = dot2.x - mouse.x;
+	var dy2 = dot2.y - mouse.y;
+	var dist2 = Math.sqrt(dx2*dx2 + dy2 * dy2);
 	if(dist < dot.radius())
 	{
 		changeStates("play");
 	}
-	if(dist < dot2.radius())
+	if(dist2 < dot2.radius())
 	{
 		changeStates("instructions");
 	}
@@ -75,30 +78,35 @@ function changeStates(stateName)
 states["start"] = function()
 {
 	context.save();
-		context.fillStyle = "black";
-		context.font = "bold 58px Arial"
+		context.fillStyle = "Purple";
+		context.font = "bold 50px Arial"
 		context.textAlign = "center";
 		context.fillRect(0, canvas.height/2-100,canvas.width, 200);
 		context.fillStyle = "white";
-		context.fillText("Welcome to my Game!", canvas.width/2, canvas.height/2-78/4)
+		context.fillText("Welcome to my Cave Escape!", canvas.width/2, canvas.height/2-78/4)
 		context.font = "bold 24px Arial"
 		context.fillText("Click the blue dot for instructions, or the purple dot to play.", canvas.width/2, canvas.height/2+(64))
+		context.fillStyle = "black";
+		context.fillText("Created by Travis Williamson", canvas.width/2, 750)
 	context.restore();
 	dot.x = canvas.width/2 - 100;
 	dot.y = 650;
+	dot2.x = canvas.width/2 + 100;
+	dot2.y = 650;
 	dot.drawCircle();	
+	dot2.drawCircle();	
 	
 }
 
+
+
 states["play"] = function()
 {
-	window.close();
 	window.open("https://twilliamsongds11121.netlify.app/gds137/week%204/level4_mini_boss/", "_blank");
 }
 states["instructions"] = function()
 {
-	window.close();
-	window.open("https://twilliamsongds11121.netlify.app/gds137/week%204/level4_mini_boss/", "_blank");
+	window.open("https://twilliamsongds11121.netlify.app/gds137/week10/basic%20game%20setup/instructions", "_blank");
 }
 
 
