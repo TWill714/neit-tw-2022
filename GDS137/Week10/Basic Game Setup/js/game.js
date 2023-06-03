@@ -23,6 +23,7 @@ var states = [];
 var player = new GameObject({width:50, height:50, angle:0, x:canvas.width/2, y:canvas.height-100, force:2, color:"gray"})
 var goal = new GameObject({width:50, height:50, color:"cyan"})
 var dot = new GameObject({width:50, height:50, color:"purple"})
+var dot2 = new GameObject({width:50, height:50, color:"blue"})
 var level = new Level();
 	level.generate(level.l1);		
 	
@@ -48,6 +49,10 @@ function startGame()
 	if(dist < dot.radius())
 	{
 		changeStates("play");
+	}
+	if(dist < dot2.radius())
+	{
+		changeStates("instructions");
 	}
 }
 
@@ -86,6 +91,11 @@ states["start"] = function()
 }
 
 states["play"] = function()
+{
+	window.close();
+	window.open("https://twilliamsongds11121.netlify.app/gds137/week%204/level4_mini_boss/", "_blank");
+}
+states["instructions"] = function()
 {
 	window.close();
 	window.open("https://twilliamsongds11121.netlify.app/gds137/week%204/level4_mini_boss/", "_blank");
