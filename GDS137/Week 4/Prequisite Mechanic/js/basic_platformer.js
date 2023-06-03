@@ -129,6 +129,7 @@ function animate()
 		
 	if(player.hitTestObject(goal))
 	{
+		alert("Thanks for playing my game! Have a great summer.");
 		goal.y = 10000;
 	}
 	if(player.hitTestObject(goal2))

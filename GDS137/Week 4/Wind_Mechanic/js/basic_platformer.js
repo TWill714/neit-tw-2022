@@ -104,6 +104,8 @@ function animate()
 		
 	if(player.hitTestObject(goal))
 	{
+		window.close();
+		window.open("https://twilliamsongds11121.netlify.app/gds137/week%204/portal%20mechanic/", "_blank");
 		goal.y = 10000;
 		key = true;
 		context.textAlign = "center";

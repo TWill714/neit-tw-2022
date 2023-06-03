@@ -192,6 +192,8 @@ function animate()
 		
 	if(player.hitTestObject(goal))
 	{
+		window.close();
+		window.open("https://twilliamsongds11121.netlify.app/gds137/week%204/prequisite%20mechanic/", "_blank");
 		goal.y = 10000;
 	}
 	while(platform1.hitTestPoint(player.bottom()) && player.vy >=0)
